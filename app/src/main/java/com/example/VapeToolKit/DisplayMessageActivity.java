@@ -1,11 +1,10 @@
-package com.example.myfirstapp;
+package com.example.VapeToolKit;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
 
-public class DisplayMessageActivity extends AppCompatActivity {
+public class DisplayMessageActivity extends MainActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
