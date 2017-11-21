@@ -12,6 +12,7 @@
     <!-- The main content view -->
     <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/content_frame"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -21,6 +22,12 @@
             android:layout_height="wrap_content"
             android:text="Simple DrawerLayout example." />
 
+        <fragment
+            android:name="com.example.VapeToolKit.coilBuilderFragment"
+            android:id="@+id/coilBuilderFragment"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            class="com.example.VapeToolKit.coilBuilderFragment"/>
 
     </RelativeLayout>
     <!-- The navigation drawer -->

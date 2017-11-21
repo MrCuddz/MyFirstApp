@@ -1,7 +1,8 @@
 package com.example.VapeToolKit;
 
-import android.content.Intent;
 import android.content.res.Configuration;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -10,13 +11,13 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
     public static final String EXTRA_MESSAGE = "com.example.myfirstapp.MESSAGE";
+    private String[] mDrawerTitles;
     private DrawerLayout mDrawer;
     private ListView mDrawerListView;
     private ActionBarDrawerToggle mDrawerToggle;
@@ -28,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        mDrawerTitles = getResources().getStringArray(R.array.menuTitles_array);
         messageTextView = (TextView) findViewById(R.id.messageTextView);
         mDrawer= (DrawerLayout) findViewById(R.id.drawer_layout);
 
@@ -59,11 +61,29 @@ public class MainActivity extends AppCompatActivity {
 				Intent myIntent = new Intent(MainActivity.this,
 						NewActivity.class);
 				startActivity(myIntent);*/
-
+                selectItem(position);
                 messageTextView.setText("Menu Item at position " + position + " clicked.");;
                 mDrawer.closeDrawer(GravityCompat.START);
             }
         });
+    }
+
+    private void selectItem(int position) {
+        Fragment newFragment;
+        FragmentTransaction transaction  = getSupportFragmentManager().beginTransaction();
+
+        switch (position){
+            case 0:
+                newFragment = new coilBuilderFragment();
+                transaction.replace(R.id.content_frame, newFragment);
+                transaction.addToBackStack(null);
+                transaction.commit();
+                break;
+
+        }
+
+        setTitle(mDrawerTitles[position]);
+
     }
 
 
