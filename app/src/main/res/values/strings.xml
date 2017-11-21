@@ -2,4 +2,16 @@
     <string name="app_name">My First App</string>
     <string name="edit_message">Enter a message</string>
     <string name="button_send">Send</string>
+    <string-array name="menuTitles_array">
+        <item>Coil Builder</item>
+        <item>Ohms Law</item>
+        <item>Battery Database</item>
+        <item>Concentrates Cabinet</item>
+        <item>Mix By Weight</item>
+        <item>Mix By Volume</item>
+        <item>ELR Recipe Database</item>
+        <item>Unit Converter</item>
+        <item>Quitters Diary</item>
+        <item>Settings</item>
+    </string-array>
 </resources>
