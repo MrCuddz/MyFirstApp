@@ -35,9 +35,9 @@
         android:layout_width="240dp"
         android:layout_height="match_parent"
         android:layout_gravity="start"
-        android:background="?android:attr/colorBackgroundFloating"
+        android:background="@color/colorPrimaryDark"
         android:choiceMode="singleChoice"
-        android:divider="@android:color/holo_blue_dark"
+        android:divider="@color/colorPrimary"
         android:dividerHeight="0dp"
         android:entries="@array/menuTitles_array" />
 

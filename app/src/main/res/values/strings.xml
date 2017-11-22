@@ -14,4 +14,8 @@
         <item>Quitters Diary</item>
         <item>Settings</item>
     </string-array>
+    <string name="voltage">Voltage</string>
+    <string name="resistance">Resistance</string>
+    <string name="current">Current</string>
+    <string name="power">Power</string>
 </resources>
