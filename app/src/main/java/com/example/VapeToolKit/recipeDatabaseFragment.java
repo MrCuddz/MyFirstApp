@@ -8,9 +8,9 @@ import android.view.ViewGroup;
 
 
 
-public class coilBuilderFragment extends Fragment {
+public class recipeDatabaseFragment extends Fragment {
 
-    public coilBuilderFragment(){
+    public recipeDatabaseFragment(){
         //required empty public constructor
     }
 
@@ -24,6 +24,6 @@ public class coilBuilderFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_coil_builder, container, false);
+        return inflater.inflate(R.layout.fragment_recipe_database, container, false);
     }
 }

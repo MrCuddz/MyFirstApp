@@ -2,6 +2,7 @@ package com.example.VapeToolKit;
 
 import android.content.res.Configuration;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -62,26 +63,55 @@ public class MainActivity extends AppCompatActivity {
 						NewActivity.class);
 				startActivity(myIntent);*/
                 selectItem(position);
-                messageTextView.setText("Menu Item at position " + position + " clicked.");;
+                //messageTextView.setText("Menu Item at position " + position + " clicked.");;
                 mDrawer.closeDrawer(GravityCompat.START);
             }
         });
     }
 
     private void selectItem(int position) {
-        Fragment newFragment;
-        FragmentTransaction transaction  = getSupportFragmentManager().beginTransaction();
+        Fragment fragment = null;
+        //FragmentTransaction transaction  = getSupportFragmentManager().beginTransaction();
 
         switch (position){
             case 0:
-                newFragment = new coilBuilderFragment();
-                transaction.replace(R.id.content_frame, newFragment);
-                transaction.addToBackStack(null);
-                transaction.commit();
+                fragment = new coilBuilderFragment();
                 break;
-
+            case 1:
+                fragment = new ohmsLawFragment();
+                break;
+            case 2:
+                fragment = new batteryDatabaseFragment();
+                break;
+            case 3:
+                fragment = new concentratesCabinetFragment();
+                break;
+            case 4:
+                fragment = new mixByVolumeFragment();
+                break;
+            case 5:
+                fragment = new mixByWeightFragment();
+                break;
+            case 6:
+                fragment = new recipeDatabaseFragment();
+                break;
+            case 7:
+                fragment = new unitConverterFragment();
+                break;
+            case 8:
+                fragment = new quittersDiaryFragment();
+                break;
+            case 9:
+                fragment = new settingsFragment();
+                break;
+            default:
+                break;
         }
 
+        if(fragment!=null){
+            FragmentManager fragmentManager = getSupportFragmentManager();
+            fragmentManager.beginTransaction().replace(R.id.content_frame, fragment).commit();
+        }
         setTitle(mDrawerTitles[position]);
 
     }
